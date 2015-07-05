@@ -12,6 +12,14 @@ echo "==> Building target..."
 cd ${BASE_DIRECTORY}
 docker build -t quay.io/dtan4/emacs:latest .
 
+if [ $? -eq 0 ]
+then
+  echo "  Build succeeded"
+else
+  echo "  Build failed"
+  exit 1
+fi
+
 echo "==> Check Emacs version..."
 docker run \
   --rm \
