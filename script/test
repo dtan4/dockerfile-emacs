@@ -1,0 +1,41 @@
+#!/bin/bash
+#
+# Usage: script/test
+# Description: script to run test
+#
+
+# this script should be run in project root
+BASE_DIRECTORY=`pwd`
+EMACS_VERSION="24.5.1"
+
+echo "==> Building target..."
+cd ${BASE_DIRECTORY}
+docker build -t quay.io/dtan4/emacs:latest .
+
+if [ $? -eq 0 ]
+then
+  echo "  Build succeeded"
+else
+  echo "  Build failed"
+  exit 1
+fi
+
+echo "==> Check Emacs version..."
+docker run \
+  --rm \
+  --name emacs \
+  quay.io/dtan4/emacs:latest \
+  emacs --version | \
+  grep -e $EMACS_VERSION
+
+if [ $? -eq 0 ]
+then
+  echo "  Test passed"
+else
+  echo "  Test failed"
+  exit 1
+fi
+
+echo "==> Cleaning up..."
+docker kill terraforming > /dev/null 2>&1 || true
+docker rm   terraforming > /dev/null 2>&1 || true
