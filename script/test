@@ -12,7 +12,7 @@ echo "==> Building target..."
 cd ${BASE_DIRECTORY}
 docker build -t quay.io/dtan4/emacs:latest .
 
-echo "==> Check Terraforming version..."
+echo "==> Check Emacs version..."
 docker run \
   --rm \
   --name emacs \
