@@ -17,6 +17,7 @@ RUN apt-get update && \
     cd ../ && \
     rm -rf emacs-$EMACS_VERSION* && \
     apt-get remove -y wget && \
+    apt-get autoremove -y $(apt-cache showsrc emacs24 | sed -e '/Build-Depends/!d;s/Build-Depends: \|,\|([^)]*),*\|\[[^]]*\]//g') && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /home/app
