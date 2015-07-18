@@ -14,6 +14,8 @@ RUN apt-get update && \
     ./configure && \
     make && \
     make install && \
+    cd ../ && \
+    rm -rf emacs-$EMACS_VERSION* && \
     apt-get remove -y wget && \
     rm -rf /var/lib/apt/lists/*
 
