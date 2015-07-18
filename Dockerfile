@@ -14,7 +14,9 @@ RUN apt-get update && \
     ./configure && \
     make && \
     make install && \
-    apt-get remove -y wget && \
+    cd ../ && \
+    rm -rf emacs-$EMACS_VERSION* && \
+    apt-get autoremove -y mailx texinfo autoconf automake autotools-dev dpkg-dev quilt debhelper sharutils imagemagick wget && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /home/app
