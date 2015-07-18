@@ -16,7 +16,7 @@ RUN apt-get update && \
     make install && \
     cd ../ && \
     rm -rf emacs-$EMACS_VERSION* && \
-    apt-get autoremove -y mailx libncurses5-dev texinfo liblockfile-dev librsvg2-dev libgif-dev libtiff5-dev xaw3dg-dev libpng-dev libjpeg-dev libm17n-dev libotf-dev libgpm-dev libdbus-1-dev autoconf automake autotools-dev dpkg-dev quilt debhelper libxaw7-dev sharutils imagemagick libgtk-3-dev libgnutls-dev libxml2-dev libselinux1-dev libmagick++-dev libgconf2-dev libasound2-dev wget && \
+    apt-get autoremove -y mailx texinfo autoconf automake autotools-dev dpkg-dev quilt debhelper sharutils imagemagick wget && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /home/app
