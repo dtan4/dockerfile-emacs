@@ -5,7 +5,6 @@ ENV EMACS_VERSION 24.5
 ENV HOME /home/app
 
 RUN apt-get update && \
-    apt-get install -y build-essential cmigemo libmigemo-dev git wget && \
     apt-get build-dep -y emacs24 && \
     wget -qO /tmp/emacs-$EMACS_VERSION.tar.gz http://ftp.gnu.org/gnu/emacs/emacs-$EMACS_VERSION.tar.gz && \
     cd /tmp && \
@@ -14,7 +13,6 @@ RUN apt-get update && \
     ./configure && \
     make && \
     make install && \
-    apt-get remove -y wget && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /home/app
