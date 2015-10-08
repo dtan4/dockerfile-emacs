@@ -1,4 +1,4 @@
-box: wercker-labs/docker
+box: wercker/ruby
 services:
   - dtan4/kuromoji-elasticsearch@0.0.9
 build:
