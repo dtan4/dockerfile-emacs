@@ -9,6 +9,7 @@ build:
           sudo apt-get update
           sudo apt-get install -y curl
           echo $WERCKER_ELASTICSEARCH_HOST
+          ping -c 5 $WERCKER_ELASTICSEARCH_HOST
           curl http://$WERCKER_ELASTICSEARCH_HOST:9200
     # - script:
     #     name: Check docker version
