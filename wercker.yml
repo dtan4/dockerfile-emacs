@@ -1,6 +1,6 @@
 box: wercker/ruby
 services:
-  - dtan4/kuromoji-elasticsearch@0.0.13
+  - dtan4/kuromoji-elasticsearch@0.0.14
 build:
   steps:
     - script:
