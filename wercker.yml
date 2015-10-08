@@ -1,11 +1,19 @@
 box: wercker-labs/docker
+services:
+  - dtan4/kuromoji-elasticsearch@0.0.9
 build:
   steps:
     - script:
-        name: Check docker version
+        name: curl
         code: |
-          docker -v
-    - script:
-        name: Run test
-        code: >
-          script/test
+          apt-get update
+          apt-get install -y curl
+          curl http://$WERCKER_ELASTICSEARCH_HOST:9200
+    # - script:
+    #     name: Check docker version
+    #     code: |
+    #       docker -v
+    # - script:
+    #     name: Run test
+    #     code: >
+    #       script/test
