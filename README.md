@@ -1,6 +1,6 @@
 # Emacs Docker Image
 
-[![wercker status](https://app.wercker.com/status/c290d38baa3a3f6481232b8d1ec14ce4/s "wercker status")](https://app.wercker.com/project/bykey/c290d38baa3a3f6481232b8d1ec14ce4)
+[![Build Status](https://travis-ci.org/dtan4/dockerfile-emacs.svg)](https://travis-ci.org/dtan4/dockerfile-emacs)
 [![Docker Repository on Quay.io](https://quay.io/repository/dtan4/emacs/status "Docker Repository on Quay.io")](https://quay.io/repository/dtan4/emacs)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
